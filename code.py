@@ -1,16 +1,27 @@
-def function1(a):
-    b = dict()
-    for c in a:
-        if c not in b:
-            b[c] = 1
+# Example usage
+sequence = 'ATCTGACGCGCGCCGC'
+
+def find_freq(seq):
+    # Initialize a dictionary to store the frequency of each character
+    freq_dict = {}
+
+    # Go through each character in the sequence
+    for char in seq:
+        if char in freq_dict:
+            freq_dict[char] += 1
         else:
-            b[c] += 1
-    return b
+            freq_dict[char] = 1
 
-def function2(a):
-    print('freqs')
-    total = float(sum([a[b] for b in a.keys()]))
-    for b in a.keys():
-        print(b + ':' + str(a[b]/total))
+    # Print the frequency results
+    print("Frequencies:")
+    for char, count in freq_dict.items():
+        print(f"{char}: {count / len(seq):.4f}")
 
-function2(function1('ATCTGACGCGCGCCGC'))
+find_freq(sequence)
+
+
+
+
+
+
+
